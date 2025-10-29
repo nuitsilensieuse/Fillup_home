@@ -30,8 +30,8 @@ async function loadPartial(selector, url) {
   document.addEventListener('DOMContentLoaded', async () => {
     // 1) Charger nav & footer
     await Promise.all([
-      loadPartial('#nav-placeholder', '/includes/nav.html'),
-      loadPartial('#footer-placeholder', '/includes/footer.html'),
+      loadPartial('#nav-placeholder', 'includes/nav.html'),
+      loadPartial('#footer-placeholder', 'includes/footer.html'),
     ]);
   
     // 2) Une fois injectés, initialiser ce qui dépend des éléments injectés
