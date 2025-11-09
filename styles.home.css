@@ -121,6 +121,8 @@ body{
 
 /* Cards and grids */
 .pricing_cards{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.pricing_cards2{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
 .pricing_card{
     background: #ffffff;
     border-radius: 20px;
@@ -128,6 +130,7 @@ body{
     position: relative;
     box-shadow: 0 2px 5px rgba(0,0,0,0.20);
 }
+
 .pricing_card_empty{ border-radius: 20px; padding: 20px; position: relative; }
 
 .grid_two{ display: grid; 
@@ -160,6 +163,7 @@ body{
     .text_size_35px{ font-size: 32px; }
     .text_size_21px{ font-size: 20px; }
     .pricing_cards{ grid-template-columns: repeat(2, 1fr); }
+    .pricing_cards2{ grid-template-columns: repeat(2, 1fr); }
     .grid_two{ grid-template-columns: 1fr; gap: 30px; }
     .grid_commentaires{ grid-template-columns: repeat(2, 1fr); }
 }
@@ -193,5 +197,6 @@ body{
     .text_size_21px{ font-size: 18px; }
     .text_size_18px{ font-size: 16px; }
     .main_btn{ width: 100%; max-width: 320px; margin: 2.5rem auto 4rem; padding: 12px 20px; }
-    .pricing_cards{ grid-template-columns: 1fr; }
+    .pricing_cards{ grid-template-columns: 1fr; gap: 10px; }
+    .pricing_cards2{ gap: 10px; }
 }
