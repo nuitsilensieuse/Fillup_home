@@ -1,0 +1,63 @@
+/* Hero slider layout */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* height controlled dynamically to the current image */
+    height: var(--hero-h, auto);
+    transition: height 300ms ease;
+    overflow: hidden;
+    background: #000;
+}
+
+.hero-slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+    transform: translateX(-100%);
+    transition: transform 600ms ease;
+}
+
+.hero-slide {
+    flex: 0 0 100%;
+    height: 100%;
+    position: relative;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* keep entire image */
+}
+
+/* Overlay text keeps existing project's classes */
+.section1 .main_container,
+.section1 .main_content {
+    pointer-events: none;
+}
+
+/* Small screens */
+@media (max-width: 640px) {
+    .hero-slider {
+        padding: 0;
+    }
+}
+
+/* Match container paddings on common breakpoints */
+@media screen and (max-width: 1024px){
+    .hero-slider{ padding: 0; }
+}
+@media screen and (max-width: 768px){
+    .hero-slider{ padding: 0; }
+}
+@media screen and (max-width: 480px){
+    .hero-slider{ padding: 0; }
+}
+

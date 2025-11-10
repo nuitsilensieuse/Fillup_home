@@ -30,6 +30,7 @@ async function loadPartial(selector, url) {
   document.addEventListener('DOMContentLoaded', async () => {
     // 1) Charger nav & footer
     await Promise.all([
+      loadPartial('#hero-placeholder', 'includes/hero_section.html'),
       loadPartial('#home-placeholder', 'includes/home.html'),
       loadPartial('#footer-placeholder', 'includes/footer.html'),
     ]);
@@ -37,5 +38,23 @@ async function loadPartial(selector, url) {
     // 2) Une fois injectés, initialiser ce qui dépend des éléments injectés
     initMenuToggle();
     initFooterYear();
+
+    
+    // Charger styles et script du hero après insertion du HTML
+    const head = document.head;
+    if (!document.querySelector('link[href="includes/hero_section.css"]')) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'includes/hero_section.css';
+      head.appendChild(link);
+    }
+    // Injecter le script du hero (s'initialise tout seul)
+    const existingHeroScript = Array.from(document.scripts).some(s => s.src.endsWith('includes/hero_section.js'));
+    if (!existingHeroScript) {
+      const script = document.createElement('script');
+      script.src = 'includes/hero_section.js';
+      script.defer = true;
+      document.body.appendChild(script);
+    }
   });
   
