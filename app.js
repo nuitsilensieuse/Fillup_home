@@ -30,6 +30,8 @@ async function loadPartial(selector, url) {
   document.addEventListener('DOMContentLoaded', async () => {
     // 1) Charger nav & footer
     await Promise.all([
+      loadPartial('#nav-placeholder', 'includes/nav.html'),
+      loadPartial('#guide-placeholder', 'includes/guide_section.html'),
       loadPartial('#hero-placeholder', 'includes/hero_section.html'),
       loadPartial('#home-placeholder', 'includes/home.html'),
       loadPartial('#footer-placeholder', 'includes/footer.html'),

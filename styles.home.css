@@ -23,12 +23,14 @@ body{
 .section5{ background-color: #01b4dd; }
 .section6{ background-color: #f8f9fa; }
 .section7{ background-color: #fffbe6; }
+.guide_section{ background-color: #f8f9fa; }
 
 /* Paddings */
 .padding_100px{ padding: 100px 0; }
 .padding_80px{ padding: 80px 0; }
 .padding_50px{ padding: 50px 0; }
 .padding_40px{ padding: 40px 0; }
+.padding_20px{ padding: 20px 0; }
 /* Paddings bottom */
 .padding_bottom_60px{ padding-bottom: 60px; }
 .padding_bottom_40px{ padding-bottom: 40px; }
@@ -86,6 +88,7 @@ body{
 /* Text styles */
 .italic_text{ font-style: italic; }
 
+.justify_left{ justify-content: left; }
 /* Layout container */
 .main_container{
     max-width: 1200px;
@@ -97,11 +100,29 @@ body{
     z-index: 1;
     display: grid;
 }
-
-.main_content p.italic_text{
-    line-height: 1.2;
+.guide_image{ height: auto; display: block; border-radius: 15px; }
+.grid_2x1{ 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;   
+    grid-template-columns: 10% 90%;
+    background-color: #ffffff; 
+    border-radius: 25px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.20);
+    padding: 40px;
 }
-
+.number{ 
+    background-color: #01b4dd;
+    color: white;              /* pour être sûr que le texte reste lisible */
+    width: 50px;               /* largeur du rond */
+    height: 50px;              /* hauteur du rond = largeur */
+    border-radius: 50%;        /* rend la forme parfaitement ronde */
+    display: flex;             /* pour centrer le contenu */
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 24px;
+}
 /* Buttons */
 .main_btn_container{ text-align: center; margin-top: 20px; }
 .main_btn{
