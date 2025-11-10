@@ -2,7 +2,7 @@
 .hero-slider {
     position: relative;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     /* height controlled dynamically to the current image */
     height: var(--hero-h, auto);

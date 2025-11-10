@@ -119,10 +119,6 @@
         startAuto();
     });
 
-    // Hover pause (desktop)
-    slider.addEventListener('mouseenter', stopAuto);
-    slider.addEventListener('mouseleave', startAuto);
-
     // Initialize position
     requestAnimationFrame(() => {
         index = 1;

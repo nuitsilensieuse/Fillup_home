@@ -88,7 +88,7 @@ body{
 
 /* Layout container */
 .main_container{
-    max-width: 1300px;
+    max-width: 1200px;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
