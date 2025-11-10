@@ -10,7 +10,7 @@ body{
 /* Fonts */
 @font-face {
     font-family: 'ImpactCustom';
-    src: url('fonts/Impacted.ttf') format('truetype');
+    src: url('fonts/unicode.impact.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -34,6 +34,11 @@ body{
 .padding_bottom_40px{ padding-bottom: 40px; }
 .pdding_bottom_20px{ padding-bottom: 20px; }
 .padding_bottom_10px{ padding-bottom: 10px; }
+/*paddings top*/
+.padding_top_60px{ padding-top: 60px; }
+.padding_top_40px{ padding-top: 40px; }
+.padding_top_20px{ padding-top: 20px; }
+.padding_top_10px{ padding-top: 10px; }
 /*margins*/
 .margin_100px{ margin: 100px 0; }
 .margin_80px{ margin: 80px 0; }
@@ -44,6 +49,10 @@ body{
 .margin_bottom_40px{ margin-bottom: 40px; }
 .margin_bottom_20px{ margin-bottom: 20px; }
 .margin_bottom_10px{ margin-bottom: 10px; }
+/*margins top*/
+.margin_top_40px{ margin-top: 40px; }
+.margin_top_20px{ margin-top: 20px; }
+.margin_top_10px{ margin-top: 10px; }
 /*alignement des textes*/
 .text_center{ text-align: center; }
 .text_left{ text-align: left; }
