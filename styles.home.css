@@ -87,6 +87,7 @@ body{
 .black_text{ color: #000000; }
 /* Text styles */
 .italic_text{ font-style: italic; }
+.bold_text{ font-weight: bold; }
 
 .justify_left{ justify-content: left; }
 /* Layout container */
