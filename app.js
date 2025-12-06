@@ -35,6 +35,7 @@ async function loadPartial(selector, url) {
       loadPartial('#hero-placeholder', 'includes/hero_section.html'),
       loadPartial('#home-placeholder', 'includes/home.html'),
       loadPartial('#footer-placeholder', 'includes/footer.html'),
+      loadPartial('#pricing-placeholder', 'includes/tarifs_section.html'),
     ]);
   
     // 2) Une fois injectés, initialiser ce qui dépend des éléments injectés

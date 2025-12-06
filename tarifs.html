@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarifs | FILLUP</title>
+    <link rel="icon" type="image/png" sizes="48x48" href="images/flavicon.ico">
     <link rel="stylesheet" href="styles.home.css">
     <link rel="stylesheet" href="includes/nav.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,144 +12,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
     <!-- Navbar -->
     <div id="nav-placeholder"></div>
 
     <!--pricing section-->
-    <main class="pricing">
-        <section class="pricing_hero">
-            <div class="pricing_container">
-                <h1>Tarifs simples et transparents</h1>
-                <p>Deux modes de commande, un même objectif: maximiser vos ventes sans surprises.</p>
-            </div>
-        </section>
-
-        <section class="pricing_grid">
-            <div class="pricing_container">
-                <div class="pricing_cards">
-                    <article class="pricing_card">
-                        <header>
-                            <h2>Commande programmée</h2>
-                            <p class="subtitle">Planifiée à l'avance</p>
-                        </header>
-                        <div class="price_split">
-                            <div class="split_col">
-                                <h3>Établissement</h3>
-                                <p class="value">3% / transaction</p>
-                            </div>
-                            <div class="split_col">
-                                <h3>Client</h3>
-                                <p class="value">3% / commande</p>
-                            </div>
-                        </div>
-                        <ul class="features">
-                            <li><i class="fa-regular fa-circle-check"></i> Paiements sécurisés</li>
-                            <li><i class="fa-regular fa-circle-check"></i> Suivi des commandes</li>
-                            <li><i class="fa-regular fa-circle-check"></i> Aucun frais caché</li>
-                        </ul>
-                    </article>
-
-                    <article class="pricing_card highlight">
-                        <header>
-                            <h2>Commande en direct</h2>
-                            <p class="subtitle">Immédiate, sur place</p>
-                            <span class="badge">Populaire</span>
-                        </header>
-                        <div class="price_split">
-                            <div class="split_col">
-                                <h3>Établissement</h3>
-                                <p class="value">3% / transaction</p>
-                            </div>
-                            <div class="split_col">
-                                <h3>Client</h3>
-                                <p class="value">0,18 € / transaction</p>
-                            </div>
-                        </div>
-                        <ul class="features">
-                            <li><i class="fa-regular fa-circle-check"></i> Encaissement rapide</li>
-                            <li><i class="fa-regular fa-circle-check"></i> Frais clients ultra bas</li>
-                            <li><i class="fa-regular fa-circle-check"></i> Idéal pour le volume</li>
-                        </ul>
-                    </article>
-                </div>
-
-                <div class="pricing_note">
-                    <p>Nous facturons les frais à l'encaissement. Les tarifs sont hors taxes. Pour les volumes importants, contactez-nous pour une offre sur mesure.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="faq">
-            <div class="pricing_container">
-                <h3>Questions fréquentes</h3>
-                <div class="faq_list">
-                    <details>
-                        <summary>Comment sont prélevés les frais ?</summary>
-                        <p>Les frais sont déduits automatiquement de chaque transaction. Aucun engagement, aucun minimum.</p>
-                    </details>
-                    <details>
-                        <summary>Peut-on changer de mode de commande ?</summary>
-                        <p>Oui, vous pouvez proposer les deux modes simultanément et laisser vos clients choisir.</p>
-                    </details>
-                    <details>
-                        <summary>Y a-t-il des frais d'installation ?</summary>
-                        <p>Non, aucun frais d'installation. Vous ne payez que quand vous vendez.</p>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-        <section class="comparison">
-            <div class="pricing_container">
-                <h3>Comparaison</h3>
-                <p class="comparison_note">Données indicatives basées sur les informations publiques. Vérifiez toujours les conditions les plus récentes.</p>
-                <div class="table_wrapper">
-                    <table class="pricing_table" aria-label="Comparaison FillUP vs Uber Eats">
-                        <thead>
-                            <tr>
-                                <th>Critère</th>
-                                <th>FillUP</th>
-                                <th>Uber Eats</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Commission établissement</td>
-                                <td><strong>3%</strong></td>
-                                <td>~<strong>13%</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Abonnement mensuel</td>
-                                <td><strong>Aucun</strong></td>
-                                <td><strong>3,99 €</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Origine</td>
-                                <td><strong>Belgique</strong></td>
-                                <td><strong>États-Unis</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-    </main>
+    <div id="pricing-placeholder"></div>
 
     <!-- Footer -->
     <div id="footer-placeholder"></div>
 
     <script src="app.js"></script>
-    <script>
-        // Scroll to pricing on hash
-        if (window.location.hash === '#direct') {
-            const highlight = document.querySelector('.pricing_card.highlight');
-            if (highlight) {
-                highlight.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-    </script>
 </body>
 </html>
 
