@@ -100,7 +100,7 @@ body{
 .justify_left{ justify-content: left; }
 .justify_center{ justify-content: center; }
 .justify_self_center{ justify-self: center; }
-.box_shadow{ box-shadow: 0 2px 5px rgba(0,0,0,0.20); }
+.box_shadow{ box-shadow: 0 2px 5px rgba(0,0,0,0.20);}
 .guide_img{ 
     max-width: 500px;
     width: 100%; 
@@ -130,7 +130,6 @@ body{
     border-radius: 25px; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.20);
     padding: 20px;
-
 }
 .grid_3x4{
     display: grid; 
@@ -140,15 +139,15 @@ body{
 
 .number{ 
     background-color: #01b4dd;
-    color: white;              /* pour être sûr que le texte reste lisible */
-    width: 50px;               /* largeur du rond */
-    height: 50px;              /* hauteur du rond = largeur */
-    border-radius: 50%;        /* rend la forme parfaitement ronde */
-    display: flex;             /* pour centrer le contenu */
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex; 
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 24px;
+    padding-top: 14px;
 }
 /* Buttons */
 .main_btn_container{ margin-top: 20px; }
@@ -246,6 +245,8 @@ body{
     .text_size_21px{ font-size: 20px; }
     .text_size_18px{ font-size: 18px; }
     .grid_2x1{ grid-template-columns: 1fr; padding: 20px; }
+    .grid_3x4{ gap: 10px; }
+    .padding_40px_40px{ padding: 20px 20px; }
     .grid_commentaires{ grid-template-columns: 1fr; }
     .padding_bottom_60px{ padding-bottom: 40px; }
 }
@@ -259,6 +260,9 @@ body{
     .text_size_35px{ font-size: 26px; }
     .text_size_21px{ font-size: 18px; }
     .text_size_18px{ font-size: 16px; }
+    .text_size_16px{ font-size: 14px; }
+    .grid_3x4{ gap: 5px; }
+    .padding_40px_40px{ padding: 10px 10px; }
     .main_btn{ width: 100%; max-width: 320px; padding: 12px 20px; }
     .pricing_cards{ grid-template-columns: 1fr; gap: 10px; }
     .pricing_cards2{ gap: 5px; }
