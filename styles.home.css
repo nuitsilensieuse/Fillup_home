@@ -181,7 +181,7 @@ body{
 .features{ list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .features li{ display: flex; align-items: center; gap: 10px; color: #374151; }
 .features i{ color: #01b4dd; }
-.features .feature_icon{ width: 18px; height: 18px; display: block; flex-shrink: 0; }
+.features .feature_icon{ width: 16px; height: 16px; display: block; flex-shrink: 0; }
 
 .grid_commentaires{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .grid_commentaires_item{
