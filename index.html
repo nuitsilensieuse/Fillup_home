@@ -19,7 +19,8 @@
 
 
     <link rel="icon" type="image/png" sizes="48x48" href="images/flavicon.ico">
-    <link rel="stylesheet" href="styles.home.css">
+    <link rel="preload" as="style" href="styles.home.css" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.home.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script type="application/ld+json">
@@ -67,6 +68,6 @@
     <!-- Footer Section -->
     <div id="footer-placeholder"></div>
 
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
 </body>
 </html>
