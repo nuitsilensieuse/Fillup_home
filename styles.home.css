@@ -556,7 +556,17 @@ body{
     display: flex; align-items: center; justify-content: center; color: #fff;
     font-size: 1.2rem; transition: all 0.3s ease;
 }
+.social-icons img{
+    width: 20px;
+    height: 20px;
+    display: block;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
 .social-icons a:hover{ background-color: #fff; color: #01b4dd; border-color: #f0c040; }
+.social-icons a:hover img{
+    filter: invert(53%) sepia(56%) saturate(5320%) hue-rotate(161deg) brightness(95%) contrast(94%);
+}
 .footer-bottom{
     border-top: 1px solid #fff;
     margin-top: 2rem;
