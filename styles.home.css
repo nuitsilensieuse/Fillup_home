@@ -183,6 +183,11 @@ body{
     display: grid;
 }
 
+/* Reserve space for injected home content to reduce CLS */
+#home-placeholder{
+    min-height: 2000px;
+    display: block;
+}
 .grid_2x1{ 
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
@@ -292,6 +297,7 @@ body{
     .pricing_cards2{ grid-template-columns: repeat(2, 1fr); }
     .grid_two{ grid-template-columns: 1fr; gap: 30px; }
     .grid_commentaires{ grid-template-columns: repeat(2, 1fr); }
+    #home-placeholder{ min-height: 1600px; }
 }
 @media screen and (max-width: 768px){
     .main_container{
@@ -317,6 +323,7 @@ body{
     .padding_40px_40px{ padding: 20px 20px; }
     .grid_commentaires{ grid-template-columns: 1fr; }
     .padding_bottom_60px{ padding-bottom: 40px; }
+    #home-placeholder{ min-height: 1400px; }
 }
 
 @media screen and (max-width: 480px){
@@ -334,6 +341,7 @@ body{
     .main_btn{ width: 100%; max-width: 320px; padding: 12px 20px; }
     .pricing_cards{ grid-template-columns: 1fr; gap: 10px; }
     .pricing_cards2{ gap: 5px; }
+    #home-placeholder{ min-height: 1200px; }
 }
 
 
