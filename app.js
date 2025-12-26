@@ -26,6 +26,118 @@ async function loadPartial(selector, url) {
     const yearSpan = document.getElementById('current_year');
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
   }
+
+  // Cookie banner -----------------------------------------------------------
+  function getStoredConsent() {
+    try {
+      const raw = localStorage.getItem('cookieConsent');
+      return raw ? JSON.parse(raw) : null;
+    } catch (_err) {
+      return null;
+    }
+  }
+
+  function saveConsent(consent) {
+    try {
+      localStorage.setItem('cookieConsent', JSON.stringify(consent));
+    } catch (_err) {
+      // If storage fails, silently ignore to avoid breaking UX
+    }
+  }
+
+  function initCookieBanner() {
+    // Prevent duplicate insertion
+    if (document.getElementById('cookie-banner')) return;
+
+    const existing = getStoredConsent();
+    if (existing && existing.necessary === true) return; // already accepted
+
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = `
+      <div id="cookie-banner" class="cookie_banner_overlay">
+        <div class="cookie_banner">
+          <div class="cookie_view" data-view="base">
+            <h3>Cookies</h3>
+            <p>Nous utilisons des cookies pour améliorer ton expérience, mesurer l'audience et proposer des contenus personnalisés.</p>
+            <div class="cookie_actions">
+              <button class="cookie_btn ghost" data-action="prefs">Préférences</button>
+              <button class="cookie_btn primary" data-action="accept">Accepter</button>
+            </div>
+          </div>
+          <div class="cookie_view hidden" data-view="prefs">
+            <h3>Préférences des cookies</h3>
+            <p>Choisis les catégories que tu souhaites autoriser.</p>
+            <div class="cookie_checks">
+              <label>
+                <input type="checkbox" disabled checked>
+                <span>Obligatoires (nécessaires au fonctionnement du site)</span>
+              </label>
+              <label>
+                <input type="checkbox" data-cookie="analytics" checked>
+                <span>Mesure d'audience</span>
+              </label>
+              <label>
+                <input type="checkbox" data-cookie="marketing" checked>
+                <span>Personnalisation & marketing</span>
+              </label>
+            </div>
+            <div class="cookie_actions">
+              <button class="cookie_btn ghost" data-action="back">Retour</button>
+              <button class="cookie_btn primary" data-action="save">Sauvegarder</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    const banner = wrapper.firstElementChild;
+    document.body.appendChild(banner);
+
+    const baseView = banner.querySelector('[data-view="base"]');
+    const prefView = banner.querySelector('[data-view="prefs"]');
+    const prefBtn = banner.querySelector('[data-action="prefs"]');
+    const acceptBtn = banner.querySelector('[data-action="accept"]');
+    const backBtn = banner.querySelector('[data-action="back"]');
+    const saveBtn = banner.querySelector('[data-action="save"]');
+    const analyticsInput = banner.querySelector('input[data-cookie="analytics"]');
+    const marketingInput = banner.querySelector('input[data-cookie="marketing"]');
+
+    function showPrefs(show) {
+      baseView.classList.toggle('hidden', show);
+      prefView.classList.toggle('hidden', !show);
+    }
+
+    function hideBanner() {
+      banner.classList.add('hidden');
+      setTimeout(() => banner.remove(), 300);
+    }
+
+    function setDefaultsFromExisting() {
+      if (!existing) return;
+      if (typeof existing.analytics === 'boolean') analyticsInput.checked = existing.analytics;
+      if (typeof existing.marketing === 'boolean') marketingInput.checked = existing.marketing;
+    }
+
+    setDefaultsFromExisting();
+
+    prefBtn.addEventListener('click', () => showPrefs(true));
+    backBtn.addEventListener('click', () => showPrefs(false));
+
+    acceptBtn.addEventListener('click', () => {
+      saveConsent({ necessary: true, analytics: true, marketing: true });
+      hideBanner();
+    });
+
+    saveBtn.addEventListener('click', () => {
+      saveConsent({
+        necessary: true,
+        analytics: analyticsInput.checked,
+        marketing: marketingInput.checked,
+      });
+      hideBanner();
+    });
+  }
+
   // Load nav & footer
   document.addEventListener('DOMContentLoaded', async () => {
     // 1) Charger nav & footer
@@ -42,6 +154,7 @@ async function loadPartial(selector, url) {
     // 2) Une fois injectés, initialiser ce qui dépend des éléments injectés
     initMenuToggle();
     initFooterYear();
+    initCookieBanner();
 
     
     // Charger styles et script du hero après insertion du HTML
